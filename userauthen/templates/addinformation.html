@@ -1,0 +1,45 @@
+{% comment %} # Name : Imtiaz Adar
+# Project : User Authentication And Adding Users
+# Language : Python
+# Framework : Django
+# Phone : 01778767775, 01979777379
+# Email : imtiazadarofficial@gmail.com {% endcomment %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>USER AUTHENTICATION AND ADD INFORMATION - IMTIAZ ADAR</title>
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">ADD NEW INFORMATION - IMTIAZ ADAR</span>
+    </nav> <br>
+    <h1 class="text-center">ADD NEW INFORMATION - IMTIAZ ADAR</h1>
+    <div class="container">
+        <form class="was-validated" method="post" >
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="fullname">Your Name</label>
+                <input name="fullname" type="text" class="form-control" id="fullname" placeholder="Enter Your Full Name" required>
+                <label for="age">Your Age</label>
+                <input name="age" type="number" class="form-control" id="fullname" placeholder="Enter Your Age" required>
+                <label for="current_location">Your Current Location</label>
+                <input name="current_location" type="text" class="form-control" id="current_location" placeholder="Enter Your Current Location" required>
+                <label for="hometown_location">Your Hometown Location</label>
+                <input name="hometown_location" type="text" class="form-control" id="hometown_location" placeholder="Enter Your Hometown Location" required>
+                <label for="hobby">Your Hobby</label>
+                <input name="hobby" type="text" class="form-control" id="hobby" placeholder="Enter Your Hobby" required>
+                <label for="experience">Your Experience</label>
+                <input name="experience" type="text" class="form-control" id="experience" placeholder="Enter Your Experience" required>
+                <br>
+                <input type="submit" class="btn btn-lg btn-dark"></input>
+            </div>
+      </form>
+      </div>
+  </body>
+</html>

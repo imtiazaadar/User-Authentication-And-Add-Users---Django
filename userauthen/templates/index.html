@@ -1,0 +1,53 @@
+{% comment %} # Name : Imtiaz Adar
+# Project : User Authentication And Adding Users
+# Language : Python
+# Framework : Django
+# Phone : 01778767775, 01979777379
+# Email : imtiazadarofficial@gmail.com {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER AUTHENTICATION AND ADD INFORMATION - IMTIAZ ADAR</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+</head> 
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">IMTIAZ ADAR</span>
+    </nav> <br>
+    <div class="container">
+        <div class="p-3 mb-2 bg-secondary text-white"><h1>USER AUTHENTICATION AND ADD INFORMATION</h1></div>
+        <!-- <p class="text-white bg-dark"></p> -->
+        {% if messages %}
+            {% if 'Logged Out' in messages %}
+                {% for message in messages %}
+                <div class="alert alert-warning" role="alert">
+                    {{message}}
+                </div>
+                    
+                {% endfor %}
+            
+            {% else %}
+                {% for message in messages %}
+                <div class="alert alert-success" role="alert">
+                    {{message}}
+                </div>
+                    
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+        {% if request.user.is_authenticated %}
+        <h1>Welcome {{request.user.username}}</h1>
+        <a href="{% url 'showinfo' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Show User Informations</a>
+        <a href="{% url 'logout' %}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Logout</a>
+        {% else %}
+        <a href="{% url 'login' %}" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Login</a>
+        <a href="{% url 'register' %}" class="btn btn-warning btn-lg" role="button" aria-pressed="true">Register</a>
+        {% endif %}
+    </div>
+</body>
+</html>
